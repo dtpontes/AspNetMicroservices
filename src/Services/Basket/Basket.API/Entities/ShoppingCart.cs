@@ -6,6 +6,7 @@ namespace Basket.API.Entities
     {
         public ShoppingCart()
         {
+            
         }
 
         public ShoppingCart(string userName)
@@ -21,6 +22,8 @@ namespace Basket.API.Entities
         {
             get
             {
+                if (Items == null)
+                    Items = new List<ShoppingCartItem>();
                 decimal totalPrice = 0;
                 foreach(var item in Items)
                 {
